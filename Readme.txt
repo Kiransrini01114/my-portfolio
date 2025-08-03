@@ -1,6 +1,5 @@
-Thanks for downloading this template!
+# 🌐 Personal Portfolio Website
 
-Template Name: Kelly
-Template URL: https://bootstrapmade.com/kelly-free-bootstrap-cv-resume-html-template/
-Author: BootstrapMade.com
-License: https://bootstrapmade.com/license/
+A responsive and modern portfolio website to showcase my projects, skills, and professional background.
+
+## 📸 Demo
