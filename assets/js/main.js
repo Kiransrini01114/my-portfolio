@@ -251,28 +251,35 @@
   { title: "Invitation Design 2", category: "invitation", image: "assets/img/pamplets/pamplet (5).png", description: "Eye-catching real estate pamplet.", detailsPage: "portfolio-details.html" },
   { title: "Invitation Design 3", category: "invitation", image: "assets/img/pamplets/pamplet (6).png", description: "Bold typography with elegant visuals.", detailsPage: "portfolio-details.html" },
   { title: "Card Design 1", category: "cards", image: "assets/img/cards/card (1).png", description: "Elegant business card with modern layout.", detailsPage: "portfolio-details.html" },
-  { title: "Card Design 2", category: "cards", image: "assets/img/cards/card (2).png", description: "Creative design suitable for freelancers.", detailsPage: "portfolio-details.html" },
-  { title: "Card Design 3", category: "cards", image: "assets/img/cards/card (3).png", description: "Minimalist black and white card.", detailsPage: "portfolio-details.html" },
+  { title: "Card Design 2", category: "cards", image: "assets/img/cards/card (3).png", description: "Minimalist black and white card.", detailsPage: "portfolio-details.html" },
+  { title: "Card Design 3", category: "cards", image: "assets/img/cards/card (2).png", description: "Creative design suitable for freelancers.", detailsPage: "portfolio-details.html" },
   { title: "Card Design 4", category: "cards", image: "assets/img/cards/card (4).png", description: "Vibrant card with colorful branding.", detailsPage: "portfolio-details.html" },
   { title: "Card Design 5", category: "cards", image: "assets/img/cards/card (5).jpg", description: "Professional card for corporate identity.", detailsPage: "portfolio-details.html" },
   { title: "Card Design 6", category: "cards", image: "assets/img/cards/card (6).jpg", description: "Unique vertical layout for standout impression.", detailsPage: "portfolio-details.html" }
 ];
 
 
-    portfolioData.forEach(item => {
-      const html = `
-        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-${item.category}">
-          <img src="${item.image}" class="img-fluid" alt="${item.title}">
-          <div class="portfolio-info">
-            <h4>${item.title}</h4>
-            <p>${item.description}</p>
-            <a href="${item.image}" title="${item.title}" data-gallery="portfolio-gallery" class="glightbox preview-link">
-              <i class="bi bi-zoom-in"></i>
-            </a>
-          </div>
-        </div>`;
-      portfolioContainer.insertAdjacentHTML('beforeend', html);
-    });
+portfolioData.forEach(item => {
+  const isLogo = item.category === 'logos';
+  const styles = [
+    isLogo ? 'background-color: #04273d' : '',
+  ].filter(Boolean).join('; ');
+
+  const html = `
+    <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-${item.category}">
+      <img src="${item.image}" class="img-fluid" alt="${item.title}" style="${styles}">
+      <div class="portfolio-info">
+        <h4>${item.title}</h4>
+        <p>${item.description}</p>
+        <a href="${item.image}" title="${item.title}" data-gallery="portfolio-gallery" class="glightbox preview-link">
+          <i class="bi bi-zoom-in"></i>
+        </a>
+      </div>
+    </div>`;
+    
+  portfolioContainer.insertAdjacentHTML('beforeend', html);
+});
+
 
     // Init Isotope after images load
     imagesLoaded(portfolioContainer, function () {
