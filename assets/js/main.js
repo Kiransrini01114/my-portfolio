@@ -251,30 +251,56 @@
   { title: "Card Design 3", category: "cards", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756750911/card_2_md6ckp.png", description: "Creative design suitable for freelancers.", detailsPage: "portfolio-details.html" },
   { title: "Card Design 4", category: "cards", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756750912/card_4_jxpchh.png", description: "Vibrant card with colorful branding.", detailsPage: "portfolio-details.html" },
   { title: "Card Design 5", category: "cards", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756750908/card_5_tudr7m.jpg", description: "Professional card for corporate identity.", detailsPage: "portfolio-details.html" },
-  { title: "Card Design 6", category: "cards", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756750908/card_6_xzphzs.jpg", description: "Unique vertical layout for standout impression.", detailsPage: "portfolio-details.html" }
+  { title: "Card Design 6", category: "cards", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756750908/card_6_xzphzs.jpg", description: "Unique vertical layout for standout impression.", detailsPage: "portfolio-details.html" },
+  { title: "Banner Design 1", category: "banners", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756767238/data_sz_opfxkp.webp", description: "Elegant business card with modern layout.", detailsPage: "portfolio-details.html" },
+  { title: "Banner Design 2", category: "banners", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756767234/google_board_ubgrxq.webp", description: "Minimalist black and white card.", detailsPage: "portfolio-details.html" },
+  { title: "Banner Design 3", category: "banners", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756767231/aws_m6krpb.webp", description: "Creative design suitable for freelancers.", detailsPage: "portfolio-details.html" },
+  { title: "Banner Design 4", category: "banners", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756767227/DATA_SCIENCE_hwz7gl.webp", description: "Vibrant card with colorful branding.", detailsPage: "portfolio-details.html" },
+  { title: "Banner Design 5", category: "banners", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756767223/ai_2_d0qg8r.webp", description: "Professional card for corporate identity.", detailsPage: "portfolio-details.html" },
+  { title: "Banner Design 6", category: "banners", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756767219/AWSSSS_pldz6d.webp", description: "Unique vertical layout for standout impression.", detailsPage: "portfolio-details.html" },
+  { title: "Banner Design 7", category: "banners", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756767218/chat_gpt_qr0vx9.webp", description: "Unique vertical layout for standout impression.", detailsPage: "portfolio-details.html" },
+  { title: "video 1", category: "videos", image: "https://res.cloudinary.com/dojy6fceq/video/upload/v1756765852/Softlogic_aupxas.mp4", description: "Video related social media content", detailsPage: "portfolio-details.html" },
+  { title: "video 2", category: "videos", image: "https://res.cloudinary.com/dojy6fceq/video/upload/v1756765856/Behind_every_successful_student_there_s_a_dedicated_trainer_SLAInstitute_Support_StudentExperience_Education_SuccessJourney_bestinstitute_softlogicsystems_slainstitute_softlogicchennai_slatraining_java_qysfsb.mp4", description: "Video related social media content", detailsPage: "portfolio-details.html" },
+  { title: "video 3", category: "videos", image: "https://res.cloudinary.com/dojy6fceq/video/upload/v1756765850/Spelling_mistakes_on_a_resume_can_have_detrimental_effects_on_your_job_prospects._It_is_important_to_acknowledge_the_negative_impact_they_can_have_and_take_necessary_steps_to_avoid_them.Firstly_spelling_mistakes_c_pr7bnm.mp4", description: "Video related social media content", detailsPage: "portfolio-details.html" },
+  { title: "video 4", category: "videos", image: "https://res.cloudinary.com/dojy6fceq/video/upload/v1756765847/Y_Abhasa_1_nw4k6l.mp4", description: "Video related social media content", detailsPage: "portfolio-details.html" },
 ];
 
 
 portfolioData.forEach(item => {
   const isLogo = item.category === 'logos';
+   const isVideo = item.category === 'videos';
   const styles = [
     isLogo ? 'background-color: #04273d' : '',
   ].filter(Boolean).join('; ');
 
-  const html = `
-    <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-${item.category}">
-      <img src="${item.image}" class="img-fluid" alt="${item.title}" style="${styles}">
-      <div class="portfolio-info">
-        <h4>${item.title}</h4>
-        <p>${item.description}</p>
-        <a href="${item.image}" title="${item.title}" data-gallery="portfolio-gallery" class="glightbox preview-link">
-          <i class="bi bi-zoom-in"></i>
-        </a>
-      </div>
-    </div>`;
-    
-  portfolioContainer.insertAdjacentHTML('beforeend', html);
-});
+   // Choose element type: <img> for images, <video> for videos
+    let mediaElement = '';
+    if (isVideo) {
+      mediaElement = `
+        <video class="img-fluid" style="${styles}" controls muted>
+          <source src="${item.image}" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      `;
+    } else {
+      mediaElement = `<img src="${item.image}" class="img-fluid" alt="${item.title}" style="${styles}">`;
+    }
+
+ const html = `
+      <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-${item.category}">
+        ${mediaElement}
+        <div class="portfolio-info">
+          <h4>${item.title}</h4>
+          <p>${item.description}</p>
+          <a href="${item.image}" title="${item.title}" data-gallery="portfolio-gallery" class="glightbox preview-link" ${isVideo ? 'data-type="video"' : ''}>
+            <i class="bi bi-zoom-in"></i>
+          </a>
+        </div>
+      </div>`;
+      
+    portfolioContainer.insertAdjacentHTML('beforeend', html);
+  });
+
 
 
     // Init Isotope after images load
@@ -285,16 +311,21 @@ portfolioData.forEach(item => {
       });
 
       document.querySelectorAll('.portfolio-filters li').forEach(btn => {
-        btn.addEventListener('click', function () {
-          document.querySelector('.portfolio-filters .filter-active')?.classList.remove('filter-active');
-          this.classList.add('filter-active');
-          iso.arrange({ filter: this.getAttribute('data-filter') });
-          aosInit();
-        });
+      btn.addEventListener('click', function () {
+        document.querySelector('.portfolio-filters .filter-active')?.classList.remove('filter-active');
+        this.classList.add('filter-active');
+        iso.arrange({ filter: this.getAttribute('data-filter') });
+        aosInit();
       });
     });
+  });
 
-    GLightbox({ selector: '.glightbox' });
+     GLightbox({ 
+    selector: '.glightbox',
+    touchNavigation: true,
+    loop: true,
+    autoplayVideos: true 
+  });
   }
 
 })();
