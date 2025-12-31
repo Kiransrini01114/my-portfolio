@@ -247,9 +247,16 @@
   { title: "Logo Design 4", category: "logos", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756751038/logo_2_vt320n.png", description: "Typography-based logo with strong identity.", detailsPage: "portfolio-details.html" },
   { title: "Logo Design 5", category: "logos", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756751038/logo_1_cuy5kr.png", description: "Professional logo for tech brands.", detailsPage: "portfolio-details.html" },
   { title: "Logo Design 6", category: "logos", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756751047/logo_11_it7wbg.png", description: "Creative emblem logo design.", detailsPage: "portfolio-details.html" },
+  { title: "Logo Design 12", category: "logos", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1767180656/WhatsApp_Image_2025-12-31_at_16.59.59_vuyehj.jpg", description: "Luxury-style branding mark.", detailsPage: "portfolio-details.html" },
+  
   { title: "Logo Design 7", category: "logos", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756751046/logo_12_bxx1mz.jpg", description: "Clean and timeless logo style.", detailsPage: "portfolio-details.html" },
   { title: "Logo Design 9", category: "logos", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756751043/logo_9_uytak8.png", description: "Geometric shapes and symmetry.", detailsPage: "portfolio-details.html" },
+  { title: "Logo Design 11", category: "logos", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1767180425/WhatsApp_Image_2025-12-31_at_16.56.26_rhrzw5.jpg", description: "Luxury-style branding mark.", detailsPage: "portfolio-details.html" },
+  
   { title: "Logo Design 10", category: "logos", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756751042/logo_8_m0aita.png", description: "Luxury-style branding mark.", detailsPage: "portfolio-details.html" },
+  { title: "Logo Design 12", category: "logos", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1767180428/WhatsApp_Image_2025-12-31_at_16.54.08_ddcgsz.jpg", description: "Luxury-style branding mark.", detailsPage: "portfolio-details.html" },
+  
+  
   { title: "Package Design 1", category: "package", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756758960/package_1_h83zw2.png", description: "Modern product packaging mockup.", detailsPage: "portfolio-details.html" },
   { title: "Package Design 2", category: "package", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756758960/package_2_zbpgwg.jpg", description: "Clean and elegant box design.", detailsPage: "portfolio-details.html" },
   { title: "Package Design 3", category: "package", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756758963/package_3_paytvi.png", description: "Creative label and branding package.", detailsPage: "portfolio-details.html" },
@@ -323,7 +330,7 @@ paginatedData.forEach(item => {
   if (isLogo) {
     const bgColor = logoIndex % 2 === 0 ? '#202020' : '#d8d8d8';
     styles = `background-color: ${bgColor};`;
-    logoIndex++; // ✅ increment ONLY for logos
+    logoIndex++; 
   }
 
   let mediaElement = isVideo
