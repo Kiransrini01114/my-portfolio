@@ -237,15 +237,17 @@
   { title: "Carousel Slide 16", category: "carousels", subCategory:"3",image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1767171721/WhatsApp_Image_2025-12-31_at_11.17.40_3_nzqcto.jpg", description: "Perfect for educational or tutorial posts.", detailsPage: "portfolio-details.html" },
   
   
+  { title: "Logo Design 8", category: "logos", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756751045/logo_10_tmlmdn.png", description: "Bold design suitable for apps.", detailsPage: "portfolio-details.html" },
+  { title: "Logo Design 2", category: "logos", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756751040/logo_4_lidkdx.png", description: "Modern logo with abstract elements.", detailsPage: "portfolio-details.html" },
+  { title: "Logo Design 1", category: "logos", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1767180199/WhatsApp_Image_2025-12-31_at_16.52.42_nxlii7.jpg", description: "Minimalist branding logo.", detailsPage: "portfolio-details.html" },
   
   { title: "Logo Design 1", category: "logos", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756751041/logo_6_t25z2h.png", description: "Minimalist branding logo.", detailsPage: "portfolio-details.html" },
-  { title: "Logo Design 2", category: "logos", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756751040/logo_4_lidkdx.png", description: "Modern logo with abstract elements.", detailsPage: "portfolio-details.html" },
+ 
   { title: "Logo Design 3", category: "logos", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756751040/logo_5_ghdomz.png", description: "Flat design logo for startups.", detailsPage: "portfolio-details.html" },
   { title: "Logo Design 4", category: "logos", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756751038/logo_2_vt320n.png", description: "Typography-based logo with strong identity.", detailsPage: "portfolio-details.html" },
   { title: "Logo Design 5", category: "logos", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756751038/logo_1_cuy5kr.png", description: "Professional logo for tech brands.", detailsPage: "portfolio-details.html" },
   { title: "Logo Design 6", category: "logos", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756751047/logo_11_it7wbg.png", description: "Creative emblem logo design.", detailsPage: "portfolio-details.html" },
   { title: "Logo Design 7", category: "logos", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756751046/logo_12_bxx1mz.jpg", description: "Clean and timeless logo style.", detailsPage: "portfolio-details.html" },
-  { title: "Logo Design 8", category: "logos", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756751045/logo_10_tmlmdn.png", description: "Bold design suitable for apps.", detailsPage: "portfolio-details.html" },
   { title: "Logo Design 9", category: "logos", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756751043/logo_9_uytak8.png", description: "Geometric shapes and symmetry.", detailsPage: "portfolio-details.html" },
   { title: "Logo Design 10", category: "logos", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756751042/logo_8_m0aita.png", description: "Luxury-style branding mark.", detailsPage: "portfolio-details.html" },
   { title: "Package Design 1", category: "package", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756758960/package_1_h83zw2.png", description: "Modern product packaging mockup.", detailsPage: "portfolio-details.html" },
