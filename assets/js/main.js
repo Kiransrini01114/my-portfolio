@@ -260,9 +260,11 @@
   { title: "Pamplet Design 1", category: "pamplet", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756759144/pamplet_3_s0m5zz.png", description: "Vibrant pamplet for marketing campaigns.", detailsPage: "portfolio-details.html" },
   { title: "Pamplet Design 2", category: "pamplet", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1767169942/WhatsApp_Image_2025-12-31_at_11.04.19_m4gwv6.jpg", description: "Vibrant pamplet for marketing campaigns.", detailsPage: "portfolio-details.html" },
   { title: "Pamplet Design 4", category: "pamplet", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1767169941/WhatsApp_Image_2025-12-31_at_11.04.41_zfu5qz.jpg", description: "Vibrant pamplet for marketing campaigns.", detailsPage: "portfolio-details.html" },
-  { title: "Pamplet Design 3", category: "pamplet", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1767169941/WhatsApp_Image_2025-12-31_at_11.05.17_pbdffc.jpg", description: "Vibrant pamplet for marketing campaigns.", detailsPage: "portfolio-details.html" },
+  { title: "Pamplet Design 8", category: "pamplet", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1767178930/WhatsApp_Image_2025-12-31_at_11.15.27_g2fsec.jpg", description: "Vibrant pamplet for marketing campaigns.", detailsPage: "portfolio-details.html" },
   { title: "Pamplet Design 8", category: "pamplet", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1767169941/WhatsApp_Image_2025-12-31_at_11.21.37_jxhsfb.jpg", description: "Vibrant pamplet for marketing campaigns.", detailsPage: "portfolio-details.html" },
   { title: "Pamplet Design 3", category: "pamplet", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1767170479/WhatsApp_Image_2025-12-31_at_10.40.07_pqrejx.jpg", description: "Vibrant pamplet for marketing campaigns.", detailsPage: "portfolio-details.html" },
+  { title: "Pamplet Design 3", category: "pamplet", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1767169941/WhatsApp_Image_2025-12-31_at_11.05.17_pbdffc.jpg", description: "Vibrant pamplet for marketing campaigns.", detailsPage: "portfolio-details.html" },
+
 
 
   
