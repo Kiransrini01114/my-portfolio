@@ -286,12 +286,20 @@
   { title: "Invitation Design 1", category: "invitation", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756759249/pamplet_4_ww383w.png", description: "Corporate-themed layout with icons.", detailsPage: "portfolio-details.html" },
   { title: "Invitation Design 2", category: "invitation", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756759251/pamplet_5_vx4us2.png", description: "Eye-catching real estate pamplet.", detailsPage: "portfolio-details.html" },
   { title: "Invitation Design 3", category: "invitation", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756759254/pamplet_6_j0tklc.png", description: "Bold typography with elegant visuals.", detailsPage: "portfolio-details.html" },
-  { title: "Card Design 1", category: "cards", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756750912/card_1_zq02uj.png", description: "Elegant business card with modern layout.", detailsPage: "portfolio-details.html" },
-  { title: "Card Design 2", category: "cards", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756758426/card_3_dago9v.png", description: "Minimalist black and white card.", detailsPage: "portfolio-details.html" },
-  { title: "Card Design 3", category: "cards", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756750911/card_2_md6ckp.png", description: "Creative design suitable for freelancers.", detailsPage: "portfolio-details.html" },
-  { title: "Card Design 4", category: "cards", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756750912/card_4_jxpchh.png", description: "Vibrant card with colorful branding.", detailsPage: "portfolio-details.html" },
   { title: "Card Design 5", category: "cards", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756750908/card_5_tudr7m.jpg", description: "Professional card for corporate identity.", detailsPage: "portfolio-details.html" },
   { title: "Card Design 6", category: "cards", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756750908/card_6_xzphzs.jpg", description: "Unique vertical layout for standout impression.", detailsPage: "portfolio-details.html" },
+  { title: "Card Design 4", category: "cards", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756750912/card_4_jxpchh.png", description: "Vibrant card with colorful branding.", detailsPage: "portfolio-details.html" },
+  { title: "Card Design 3", category: "cards", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756750911/card_2_md6ckp.png", description: "Creative design suitable for freelancers.", detailsPage: "portfolio-details.html" }, 
+  { title: "Card Design 1", category: "cards", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756750912/card_1_zq02uj.png", description: "Elegant business card with modern layout.", detailsPage: "portfolio-details.html" },
+  { title: "Card Design 2", category: "cards", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756758426/card_3_dago9v.png", description: "Minimalist black and white card.", detailsPage: "portfolio-details.html" },
+  
+  { title: "Card Design 1", category: "cards", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1767181895/WhatsApp_Image_2025-12-31_at_17.12.47_1_vtckzd.jpg", description: "Elegant business card with modern layout.", detailsPage: "portfolio-details.html" },
+  { title: "Card Design 2", category: "cards", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1767181898/WhatsApp_Image_2025-12-31_at_17.12.47_uuclzm.jpg", description: "Minimalist black and white card.", detailsPage: "portfolio-details.html" },
+  
+  { title: "Card Design 1", category: "cards", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1767181891/WhatsApp_Image_2025-12-31_at_17.14.19_ms8vyv.jpg", description: "Elegant business card with modern layout.", detailsPage: "portfolio-details.html" },
+  { title: "Card Design 2", category: "cards", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1767181890/WhatsApp_Image_2025-12-31_at_17.14.19_1_nbkngw.jpg", description: "Minimalist black and white card.", detailsPage: "portfolio-details.html" },
+  
+  
   { title: "Banner Design 1", category: "banners", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756767238/data_sz_opfxkp.webp", description: "Elegant business card with modern layout.", detailsPage: "portfolio-details.html" },
   { title: "Banner Design 2", category: "banners", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756767234/google_board_ubgrxq.webp", description: "Minimalist black and white card.", detailsPage: "portfolio-details.html" },
   { title: "Banner Design 3", category: "banners", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756767231/aws_m6krpb.webp", description: "Creative design suitable for freelancers.", detailsPage: "portfolio-details.html" },
@@ -304,69 +312,88 @@
   { title: "video 3", category: "videos", image: "https://res.cloudinary.com/dojy6fceq/video/upload/v1756765850/Spelling_mistakes_on_a_resume_can_have_detrimental_effects_on_your_job_prospects._It_is_important_to_acknowledge_the_negative_impact_they_can_have_and_take_necessary_steps_to_avoid_them.Firstly_spelling_mistakes_c_pr7bnm.mp4", description: "Video related social media content", detailsPage: "portfolio-details.html" },
   { title: "video 4", category: "videos", image: "https://res.cloudinary.com/dojy6fceq/video/upload/v1756765847/Y_Abhasa_1_nw4k6l.mp4", description: "Video related social media content", detailsPage: "portfolio-details.html" },
 ];
- function renderPortfolio(category = '*', page = 1) {
+function renderPortfolio(category = '*', page = 1) {
   if (page === 1) portfolioContainer.innerHTML = '';
 
-  let filteredData = category === '*' 
-    ? portfolioData 
-    : portfolioData.filter(item => item.category === category);
+  // Filter by category
+  const filteredData =
+    category === '*'
+      ? portfolioData
+      : portfolioData.filter(item => item.category === category);
 
   const startIndex = (page - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
   const paginatedData = filteredData.slice(startIndex, endIndex);
 
-let logoIndex = 0; 
+  let logoIndex = 0; // ✅ logo-only counter
 
-paginatedData.forEach(item => {
-  // Skip carousel items
-  if (item.category === 'carousels') return;
+  paginatedData.forEach(item => {
+    // Skip carousel items
+    if (item.category === 'carousels') return;
 
-  const isVideo = item.category === 'videos';
-  const isLogo = item.category === 'logos';
+    const isVideo = item.category === 'videos';
+    const isLogo = item.category === 'logos';
 
-  let styles = '';
+    let styles = '';
 
-  if (isLogo) {
-    const bgColor = logoIndex % 2 === 0 ? '#202020' : '#d8d8d8';
-    styles = `background-color: ${bgColor};`;
-    logoIndex++; 
-  }
+    // Alternate background for logos
+    if (isLogo) {
+      const bgColor = logoIndex % 2 === 0 ? '#202020' : '#d8d8d8';
+      styles = `background-color:${bgColor};`;
+      logoIndex++;
+    }
 
-  let mediaElement = isVideo
-    ? `<video class="img-fluid" style="${styles}" controls muted>
-         <source src="${item.image}" type="video/mp4">
-         Your browser does not support the video tag.
-       </video>`
-    : `<img loading="lazy" src="${item.image}" class="img-fluid" alt="${item.title}" style="${styles}">`;
+    // Media element
+    const mediaElement = isVideo
+      ? `<video class="img-fluid" style="${styles}" controls muted>
+           <source src="${item.image}" type="video/mp4">
+           Your browser does not support the video tag.
+         </video>`
+      : `<img loading="lazy"
+              src="${item.image}"
+              class="img-fluid"
+              alt="${item.title}"
+              style="${styles}">`;
 
-  const html = `
-    <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-${item.category}">
-      ${mediaElement}
-      <div class="portfolio-info">
-        <h4>${item.title}</h4>
-        <p>${item.description}</p>
-        <a href="${item.image}" 
-           title="${item.title}" 
-           data-gallery="portfolio-gallery" 
-           class="glightbox preview-link" 
-           ${isVideo ? 'data-type="video"' : ''}>
-          <i class="bi bi-zoom-in"></i>
-        </a>
+    // Grid logic: cards → 2 per row
+    const gridClass =
+      item.category === 'cards'
+        ? 'col-lg-6 col-md-6'
+        : 'col-lg-4 col-md-6';
+
+    const html = `
+      <div class="${gridClass} portfolio-item isotope-item filter-${item.category}">
+        ${mediaElement}
+        <div class="portfolio-info">
+          <h4>${item.title}</h4>
+          <p>${item.description}</p>
+          <a href="${item.image}"
+             title="${item.title}"
+             data-gallery="portfolio-gallery"
+             class="glightbox preview-link"
+             ${isVideo ? 'data-type="video"' : ''}>
+            <i class="bi bi-zoom-in"></i>
+          </a>
+        </div>
       </div>
-    </div>
-  `;
+    `;
 
-  portfolioContainer.insertAdjacentHTML('beforeend', html);
-});
-
+    portfolioContainer.insertAdjacentHTML('beforeend', html);
+  });
 
   // Re-init Isotope & GLightbox
   imagesLoaded(portfolioContainer, function () {
-    const iso = new Isotope(portfolioContainer, {
+    new Isotope(portfolioContainer, {
       itemSelector: '.portfolio-item',
       layoutMode: 'masonry'
     });
-    GLightbox({ selector: '.glightbox', touchNavigation: true, loop: true, autoplayVideos: true });
+
+    GLightbox({
+      selector: '.glightbox',
+      touchNavigation: true,
+      loop: true,
+      autoplayVideos: true
+    });
   });
 }
 
