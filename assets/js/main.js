@@ -173,33 +173,50 @@
 
   // Your portfolioData (as defined in your original code)
   const portfolioData = [
-  { title: "Poster Design 1", category: "poster", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756759501/poster_1_qx5frz.jpg", description: "Bold and creative visual communication.", detailsPage: "portfolio-details.html" },
-  { title: "Poster Design 2", category: "poster", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756759505/poster_2_ogfj48.png", description: "Modern layout for an upcoming event.", detailsPage: "portfolio-details.html" },
-  { title: "Poster Design 3", category: "poster", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756759507/poster_3_mqxqku.png", description: "Eye-catching promotional artwork.", detailsPage: "portfolio-details.html" },
-  { title: "Poster Design 4", category: "poster", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756759510/poster_4_cw1rj0.png", description: "Minimal and effective event poster.", detailsPage: "portfolio-details.html" },
-  { title: "Poster Design 5", category: "poster", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756759514/poster_5_gdznji.png", description: "Striking design with bold colors.", detailsPage: "portfolio-details.html" },
+ 
+  { title: "Poster Design 15", category: "poster", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756759563/poster_21_hn1tof.png", description: "Futuristic style for tech-themed events.", detailsPage: "portfolio-details.html" },
+  { title: "Poster Design 15", category: "poster", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756759566/poster_22_lmrfdj.png", description: "Futuristic style for tech-themed events.", detailsPage: "portfolio-details.html" },
   { title: "Poster Design 6", category: "poster", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756759516/poster_6_kmqdxf.png", description: "Vintage aesthetic with modern typography.", detailsPage: "portfolio-details.html" },
-  { title: "Poster Design 7", category: "poster", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756759519/poster_7_qz6epk.png", description: "Elegant style for a brand launch.", detailsPage: "portfolio-details.html" },
-  { title: "Poster Design 8", category: "poster", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756759522/poster_8_jayj1y.png", description: "Dynamic layout for social media promotion.", detailsPage: "portfolio-details.html" },
-  { title: "Poster Design 9", category: "poster", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756759526/poster_9_pg8akt.png", description: "Bold fonts with an energetic vibe.", detailsPage: "portfolio-details.html" },
-  { title: "Poster Design 10", category: "poster", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756759529/poster_10_ckgb1q.png", description: "Event invitation with elegant visuals.", detailsPage: "portfolio-details.html" },
-  { title: "Poster Design 11", category: "poster", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756759532/poster_11_hdgmzj.png", description: "Abstract art merged with clean layout.", detailsPage: "portfolio-details.html" },
-  { title: "Poster Design 12", category: "poster", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756759535/poster_12_ly5kos.png", description: "Bold poster for a music event.", detailsPage: "portfolio-details.html" },
-  { title: "Poster Design 13", category: "poster", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756759538/poster_13_v3iewq.png", description: "Illustrated concept for a campaign.", detailsPage: "portfolio-details.html" },
-  { title: "Poster Design 14", category: "poster", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756759541/poster_14_muiu33.png", description: "Geometric patterns for a clean look.", detailsPage: "portfolio-details.html" },
   { title: "Poster Design 15", category: "poster", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756759545/poster_15_hcnz1c.png", description: "Futuristic style for tech-themed events.", detailsPage: "portfolio-details.html" },
-  { title: "Poster Design 16", category: "poster", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756759548/poster_16_n8zifr.png", description: "Fashion brand teaser poster.", detailsPage: "portfolio-details.html" },
-  { title: "Poster Design 17", category: "poster", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756759551/poster_17_osiqsj.png", description: "Festival theme with traditional elements.", detailsPage: "portfolio-details.html" },
-  { title: "Poster Design 18", category: "poster", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756759554/poster_18_i8rjgs.png", description: "Luxury design with elegant serif typography.", detailsPage: "portfolio-details.html" },
-  { title: "Poster Design 19", category: "poster", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756759557/poster_19_qnzgs2.png", description: "Promotional flyer with urban design.", detailsPage: "portfolio-details.html" },
-  { title: "Poster Design 20", category: "poster", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756759560/poster_20_g2ursx.png", description: "Illustrated characters with playful layout.", detailsPage: "portfolio-details.html" },
-  { title: "Poster Design 21", category: "poster", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756759563/poster_21_hn1tof.png", description: "Minimalistic design for art exhibition.", detailsPage: "portfolio-details.html" },
-  { title: "Poster Design 22", category: "poster", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756759566/poster_22_lmrfdj.png", description: "High-contrast layout for bold messaging.", detailsPage: "portfolio-details.html" },
-  { title: "Poster Design 23", category: "poster", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756759569/poster_23_wnxfet.jpg", description: "Elegant visuals for a corporate event.", detailsPage: "portfolio-details.html" },
-  { title: "Poster Design 24", category: "poster", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1767170572/WhatsApp_Image_2025-12-31_at_10.40.28_xh9yrm.jpg", description: "Elegant visuals for a corporate event.", detailsPage: "portfolio-details.html" },
+  { title: "Poster Design 3", category: "poster", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756759507/poster_3_mqxqku.png", description: "Eye-catching promotional artwork.", detailsPage: "portfolio-details.html" },
+  { title: "Poster Design 15", category: "poster", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756759519/poster_7_qz6epk.png", description: "Futuristic style for tech-themed events.", detailsPage: "portfolio-details.html" },
+ 
   { title: "Poster Design 25", category: "poster", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1767170572/WhatsApp_Image_2025-12-31_at_10.43.52_gbnffe.jpg", description: "Elegant visuals for a corporate event.", detailsPage: "portfolio-details.html" },
   { title: "Poster Design 26", category: "poster", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1767170571/WhatsApp_Image_2025-12-31_at_10.43.51_oormwy.jpg", description: "Elegant visuals for a corporate event.", detailsPage: "portfolio-details.html" },
   { title: "Poster Design 27", category: "poster", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1767170571/WhatsApp_Image_2025-12-31_at_10.43.52_1_jfhdh3.jpg", description: "Elegant visuals for a corporate event.", detailsPage: "portfolio-details.html" },
+  
+
+   
+  { title: "Poster Design 4", category: "poster", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756759510/poster_4_cw1rj0.png", description: "Minimal and effective event poster.", detailsPage: "portfolio-details.html" },
+  { title: "Poster Design 8", category: "poster", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756759522/poster_8_jayj1y.png", description: "Dynamic layout for social media promotion.", detailsPage: "portfolio-details.html" },
+  { title: "Poster Design 29", category: "poster", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1767176924/WhatsApp_Image_2025-12-31_at_15.53.02_cror1t.jpg", description: "Dynamic layout for social media promotion.", detailsPage: "portfolio-details.html" },
+
+  { title: "Poster Design 1", category: "poster", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756759501/poster_1_qx5frz.jpg", description: "Bold and creative visual communication.", detailsPage: "portfolio-details.html" },
+  { title: "Poster Design 23", category: "poster", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756759569/poster_23_wnxfet.jpg", description: "Elegant visuals for a corporate event.", detailsPage: "portfolio-details.html" },
+  { title: "Poster Design 28", category: "poster", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1767176837/WhatsApp_Image_2025-12-31_at_15.52.01_1_mxbnns.jpg", description: "Elegant visuals for a corporate event.", detailsPage: "portfolio-details.html" },
+  
+ 
+  
+  { title: "Poster Design 11", category: "poster", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756759532/poster_11_hdgmzj.png", description: "Abstract art merged with clean layout.", detailsPage: "portfolio-details.html" },
+  { title: "Poster Design 18", category: "poster", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756759554/poster_18_i8rjgs.png", description: "Luxury design with elegant serif typography.", detailsPage: "portfolio-details.html" },
+  { title: "Poster Design 19", category: "poster", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756759557/poster_19_qnzgs2.png", description: "Promotional flyer with urban design.", detailsPage: "portfolio-details.html" },
+
+  { title: "Poster Design 24", category: "poster", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756759551/poster_17_osiqsj.png", description: "Elegant visuals for a corporate event.", detailsPage: "portfolio-details.html" },
+  { title: "Poster Design 24", category: "poster", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1767170572/WhatsApp_Image_2025-12-31_at_10.40.28_xh9yrm.jpg", description: "Elegant visuals for a corporate event.", detailsPage: "portfolio-details.html" },
+  { title: "Poster Design 24", category: "poster", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1767177754/WhatsApp_Image_2025-12-31_at_16.10.22_wb63bl.jpg", description: "Elegant visuals for a corporate event.", detailsPage: "portfolio-details.html" },
+
+  
+
+  { title: "Poster Design 2", category: "poster", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756759505/poster_2_ogfj48.png", description: "Modern layout for an upcoming event.", detailsPage: "portfolio-details.html" },
+  { title: "Poster Design 5", category: "poster", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756759514/poster_5_gdznji.png", description: "Striking design with bold colors.", detailsPage: "portfolio-details.html" },
+  { title: "Poster Design 20", category: "poster", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756759560/poster_20_g2ursx.png", description: "Illustrated characters with playful layout.", detailsPage: "portfolio-details.html" },
+  
+  
+  
+  { title: "Poster Design 12", category: "poster", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756759535/poster_12_ly5kos.png", description: "Bold poster for a music event.", detailsPage: "portfolio-details.html" },
+  { title: "Poster Design 14", category: "poster", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756759541/poster_14_muiu33.png", description: "Geometric patterns for a clean look.", detailsPage: "portfolio-details.html" },
+  { title: "Poster Design 16", category: "poster", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756759548/poster_16_n8zifr.png", description: "Fashion brand teaser poster.", detailsPage: "portfolio-details.html" },
+  
   
   
   { title: "Carousel Slide 1", category: "carousels", subCategory:"1", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756758596/carousel_10_jv9hnd.png", description: "Instagram carousel for promotions.", detailsPage: "portfolio-details.html" },
