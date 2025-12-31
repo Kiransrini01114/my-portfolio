@@ -245,7 +245,6 @@
  
   { title: "Logo Design 3", category: "logos", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756751040/logo_5_ghdomz.png", description: "Flat design logo for startups.", detailsPage: "portfolio-details.html" },
   { title: "Logo Design 4", category: "logos", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756751038/logo_2_vt320n.png", description: "Typography-based logo with strong identity.", detailsPage: "portfolio-details.html" },
-  { title: "Logo Design 5", category: "logos", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756751038/logo_1_cuy5kr.png", description: "Professional logo for tech brands.", detailsPage: "portfolio-details.html" },
   { title: "Logo Design 6", category: "logos", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756751047/logo_11_it7wbg.png", description: "Creative emblem logo design.", detailsPage: "portfolio-details.html" },
   { title: "Logo Design 12", category: "logos", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1767180656/WhatsApp_Image_2025-12-31_at_16.59.59_vuyehj.jpg", description: "Luxury-style branding mark.", detailsPage: "portfolio-details.html" },
   
