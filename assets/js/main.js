@@ -307,35 +307,50 @@
   const endIndex = startIndex + itemsPerPage;
   const paginatedData = filteredData.slice(startIndex, endIndex);
 
-  paginatedData.forEach(item => {
-    // Skip items with category 'carousels'
-    if (item.category === 'carousels') return;
+let logoIndex = 0; 
 
-    const isLogo = item.category === 'logos';
-    const isVideo = item.category === 'videos';
-    const styles = isLogo ? 'background-color: #04273d;' : '';
+paginatedData.forEach(item => {
+  // Skip carousel items
+  if (item.category === 'carousels') return;
 
-    let mediaElement = isVideo
-      ? `<video class="img-fluid" style="${styles}" controls muted>
-          <source src="${item.image}" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>`
-      : `<img loading="lazy" src="${item.image}" class="img-fluid" alt="${item.title}" style="${styles}">`;
+  const isVideo = item.category === 'videos';
+  const isLogo = item.category === 'logos';
 
-    const html = `
-      <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-${item.category}">
-        ${mediaElement}
-        <div class="portfolio-info">
-          <h4>${item.title}</h4>
-          <p>${item.description}</p>
-          <a href="${item.image}" title="${item.title}" data-gallery="portfolio-gallery" class="glightbox preview-link" ${isVideo ? 'data-type="video"' : ''}>
-            <i class="bi bi-zoom-in"></i>
-          </a>
-        </div>
-      </div>`;
+  let styles = '';
 
-    portfolioContainer.insertAdjacentHTML('beforeend', html);
-  });
+  if (isLogo) {
+    const bgColor = logoIndex % 2 === 0 ? '#202020' : '#d8d8d8';
+    styles = `background-color: ${bgColor};`;
+    logoIndex++; // ✅ increment ONLY for logos
+  }
+
+  let mediaElement = isVideo
+    ? `<video class="img-fluid" style="${styles}" controls muted>
+         <source src="${item.image}" type="video/mp4">
+         Your browser does not support the video tag.
+       </video>`
+    : `<img loading="lazy" src="${item.image}" class="img-fluid" alt="${item.title}" style="${styles}">`;
+
+  const html = `
+    <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-${item.category}">
+      ${mediaElement}
+      <div class="portfolio-info">
+        <h4>${item.title}</h4>
+        <p>${item.description}</p>
+        <a href="${item.image}" 
+           title="${item.title}" 
+           data-gallery="portfolio-gallery" 
+           class="glightbox preview-link" 
+           ${isVideo ? 'data-type="video"' : ''}>
+          <i class="bi bi-zoom-in"></i>
+        </a>
+      </div>
+    </div>
+  `;
+
+  portfolioContainer.insertAdjacentHTML('beforeend', html);
+});
+
 
   // Re-init Isotope & GLightbox
   imagesLoaded(portfolioContainer, function () {
