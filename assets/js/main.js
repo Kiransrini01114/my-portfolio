@@ -256,12 +256,12 @@
   { title: "Logo Design 10", category: "logos", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756751042/logo_8_m0aita.png", description: "Luxury-style branding mark.", detailsPage: "portfolio-details.html" },
   
   
-  { title: "Package Design 1", category: "package", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756758960/package_1_h83zw2.png", description: "Modern product packaging mockup.", detailsPage: "portfolio-details.html" },
   { title: "Package Design 2", category: "package", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756758960/package_2_zbpgwg.jpg", description: "Clean and elegant box design.", detailsPage: "portfolio-details.html" },
-  { title: "Package Design 3", category: "package", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756758963/package_3_paytvi.png", description: "Creative label and branding package.", detailsPage: "portfolio-details.html" },
   { title: "Package Design 4", category: "package", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756758962/package_4_yv95sm.jpg", description: "Eco-friendly packaging concept.", detailsPage: "portfolio-details.html" },
-  { title: "Package Design 4", category: "package", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1767182272/mkn_ojssnu.png", description: "Eco-friendly packaging concept.", detailsPage: "portfolio-details.html" },
-  { title: "Package Design 5", category: "package", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756758964/package_5_gxariv.jpg", description: "Premium product box layout.", detailsPage: "portfolio-details.html" },
+ { title: "Package Design 5", category: "package", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756758964/package_5_gxariv.jpg", description: "Premium product box layout.", detailsPage: "portfolio-details.html" },
+   { title: "Package Design 4", category: "package", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1767182272/mkn_ojssnu.png", description: "Eco-friendly packaging concept.", detailsPage: "portfolio-details.html" },
+ { title: "Package Design 3", category: "package", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756758963/package_3_paytvi.png", description: "Creative label and branding package.", detailsPage: "portfolio-details.html" },
+  { title: "Package Design 1", category: "package", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756758960/package_1_h83zw2.png", description: "Modern product packaging mockup.", detailsPage: "portfolio-details.html" },
   
   { title: "Pamplet Design 7", category: "pamplet", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1767169940/WhatsApp_Image_2025-12-31_at_11.23.02_i9qlpa.jpg", description: "Vibrant pamplet for marketing campaigns.", detailsPage: "portfolio-details.html" },
   { title: "Pamplet Design 6", category: "pamplet", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1767169941/WhatsApp_Image_2025-12-31_at_11.23.02_1_eljyxk.jpg", description: "Vibrant pamplet for marketing campaigns.", detailsPage: "portfolio-details.html" },
