@@ -1421,3 +1421,59 @@ section,
 .starter-section {
   /* Add your styles here */
 }
+
+.section-loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 180px;
+}
+
+.section-loader.hidden {
+  display: none;
+}
+
+.spinner {
+  width: 36px;
+  height: 36px;
+  border: 3px solid #eaeaea;
+  border-top: 3px solid #04273d;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.carousel-section .swiper {
+  margin-bottom: 80px; /* adjust gap as needed */
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+.carousel-section{
+  padding: 20px 0px !important;
+  margin-top: 0px !important;
+}
+
+/* Swiper navigation buttons */
+.carousel-section .swiper-button-next,
+.carousel-section .swiper-button-prev {
+  width: 44px;
+  height: 44px;
+  background-color: #34b7a7;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Arrow icon color & size */
+.carousel-section .swiper-button-next::after,
+.carousel-section .swiper-button-prev::after {
+  font-size: 16px;
+  font-weight: bold;
+  color: #ffffff;
+}

@@ -164,11 +164,15 @@
   });
 
   /**
-   * Dynamic portfolio rendering
+   * Portfolio with infinite scroll
    */
   const portfolioContainer = document.querySelector('#portfolioContainer');
-  if (portfolioContainer) {
-   const portfolioData = [
+  const itemsPerPage = 5;
+  let currentCategory = 'poster';
+  let currentPage = 1;
+
+  // Your portfolioData (as defined in your original code)
+  const portfolioData = [
   { title: "Poster Design 1", category: "poster", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756759501/poster_1_qx5frz.jpg", description: "Bold and creative visual communication.", detailsPage: "portfolio-details.html" },
   { title: "Poster Design 2", category: "poster", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756759505/poster_2_ogfj48.png", description: "Modern layout for an upcoming event.", detailsPage: "portfolio-details.html" },
   { title: "Poster Design 3", category: "poster", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756759507/poster_3_mqxqku.png", description: "Eye-catching promotional artwork.", detailsPage: "portfolio-details.html" },
@@ -192,39 +196,31 @@
   { title: "Poster Design 21", category: "poster", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756759563/poster_21_hn1tof.png", description: "Minimalistic design for art exhibition.", detailsPage: "portfolio-details.html" },
   { title: "Poster Design 22", category: "poster", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756759566/poster_22_lmrfdj.png", description: "High-contrast layout for bold messaging.", detailsPage: "portfolio-details.html" },
   { title: "Poster Design 23", category: "poster", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756759569/poster_23_wnxfet.jpg", description: "Elegant visuals for a corporate event.", detailsPage: "portfolio-details.html" },
-  { 
-  title: "Thumbnail Design 1", 
-  category: "thumbnail", 
-  image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756759398/thumb_1_sv89nu.jpg", 
-  description: "Eye-catching thumbnail design with bold typography.", 
-  detailsPage: "portfolio-details.html" 
-},
-{ 
-  title: "Thumbnail Design 2", 
-  category: "thumbnail", 
-  image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756759399/thumb_2_cvveuo.jpg", 
-  description: "Clean layout crafted for YouTube content preview.", 
-  detailsPage: "portfolio-details.html" 
-},
-{ 
-  title: "Thumbnail Design 3", 
-  category: "thumbnail", 
-  image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756759399/thumb_3_zafeor.jpg", 
-  description: "High-contrast design to grab user attention instantly.", 
-  detailsPage: "portfolio-details.html" 
-},
-  { title: "Carousel Slide 1", category: "carousels", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756758596/carousel_10_jv9hnd.png", description: "Instagram carousel for promotions.", detailsPage: "portfolio-details.html" },
-  { title: "Carousel Slide 2", category: "carousels", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756758597/carousel_11_dfq4rn.png", description: "Engaging carousel for product showcase.", detailsPage: "portfolio-details.html" },
-  { title: "Carousel Slide 3", category: "carousels", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756758599/carousel_12_hosx0b.png", description: "Swipe-friendly design for mobile audiences.", detailsPage: "portfolio-details.html" },
-  { title: "Carousel Slide 4", category: "carousels", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756758601/carousel_13_djltmm.png", description: "Informative slide layout for services.", detailsPage: "portfolio-details.html" },
-  { title: "Carousel Slide 5", category: "carousels", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756758594/carousel_9_olnekd.png", description: "Designed for storytelling on social platforms.", detailsPage: "portfolio-details.html" },
-  { title: "Carousel Slide 6", category: "carousels", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756758593/carousel_8_uxvxrg.png", description: "Interactive and modern carousel for events.", detailsPage: "portfolio-details.html" },
-  { title: "Carousel Slide 7", category: "carousels", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756758582/carousel_2_o9mogj.png", description: "Minimalist design with smooth transitions.", detailsPage: "portfolio-details.html" },
-  { title: "Carousel Slide 8", category: "carousels", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756758584/carousel_3_g3fu2v.png", description: "Designed for user engagement and retention.", detailsPage: "portfolio-details.html" },
-  { title: "Carousel Slide 9", category: "carousels", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756758585/carousel_4_bgtosj.png", description: "Clean and attractive carousel layout.", detailsPage: "portfolio-details.html" },
-  { title: "Carousel Slide 10", category: "carousels", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756758587/carousel_5_vz8xuw.png", description: "Bold text and visuals for quick scanning.", detailsPage: "portfolio-details.html" },
-  { title: "Carousel Slide 11", category: "carousels", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756758589/carousel_6_lmqtm2.png", description: "Professional layout for portfolio highlights.", detailsPage: "portfolio-details.html" },
-  { title: "Carousel Slide 12", category: "carousels", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756758590/carousel_7_xpov6p.png", description: "Perfect for educational or tutorial posts.", detailsPage: "portfolio-details.html" },
+  { title: "Poster Design 24", category: "poster", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1767170572/WhatsApp_Image_2025-12-31_at_10.40.28_xh9yrm.jpg", description: "Elegant visuals for a corporate event.", detailsPage: "portfolio-details.html" },
+  { title: "Poster Design 25", category: "poster", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1767170572/WhatsApp_Image_2025-12-31_at_10.43.52_gbnffe.jpg", description: "Elegant visuals for a corporate event.", detailsPage: "portfolio-details.html" },
+  { title: "Poster Design 26", category: "poster", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1767170571/WhatsApp_Image_2025-12-31_at_10.43.51_oormwy.jpg", description: "Elegant visuals for a corporate event.", detailsPage: "portfolio-details.html" },
+  { title: "Poster Design 27", category: "poster", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1767170571/WhatsApp_Image_2025-12-31_at_10.43.52_1_jfhdh3.jpg", description: "Elegant visuals for a corporate event.", detailsPage: "portfolio-details.html" },
+  
+  
+  { title: "Carousel Slide 1", category: "carousels", subCategory:"1", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756758596/carousel_10_jv9hnd.png", description: "Instagram carousel for promotions.", detailsPage: "portfolio-details.html" },
+  { title: "Carousel Slide 2", category: "carousels", subCategory:"1", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756758597/carousel_11_dfq4rn.png", description: "Engaging carousel for product showcase.", detailsPage: "portfolio-details.html" },
+  { title: "Carousel Slide 3", category: "carousels", subCategory:"1", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756758599/carousel_12_hosx0b.png", description: "Swipe-friendly design for mobile audiences.", detailsPage: "portfolio-details.html" },
+  { title: "Carousel Slide 4", category: "carousels", subCategory:"1", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756758601/carousel_13_djltmm.png", description: "Informative slide layout for services.", detailsPage: "portfolio-details.html" },
+  { title: "Carousel Slide 5", category: "carousels", subCategory:"1", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756758594/carousel_9_olnekd.png", description: "Designed for storytelling on social platforms.", detailsPage: "portfolio-details.html" },
+  { title: "Carousel Slide 6", category: "carousels", subCategory:"2", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756758593/carousel_8_uxvxrg.png", description: "Interactive and modern carousel for events.", detailsPage: "portfolio-details.html" },
+  { title: "Carousel Slide 7", category: "carousels", subCategory:"2",image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756758582/carousel_2_o9mogj.png", description: "Minimalist design with smooth transitions.", detailsPage: "portfolio-details.html" },
+  { title: "Carousel Slide 8", category: "carousels", subCategory:"2",image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756758584/carousel_3_g3fu2v.png", description: "Designed for user engagement and retention.", detailsPage: "portfolio-details.html" },
+  { title: "Carousel Slide 9", category: "carousels", subCategory:"2",image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756758585/carousel_4_bgtosj.png", description: "Clean and attractive carousel layout.", detailsPage: "portfolio-details.html" },
+  { title: "Carousel Slide 10", category: "carousels", subCategory:"2",image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756758587/carousel_5_vz8xuw.png", description: "Bold text and visuals for quick scanning.", detailsPage: "portfolio-details.html" },
+  { title: "Carousel Slide 11", category: "carousels", subCategory:"2",image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756758589/carousel_6_lmqtm2.png", description: "Professional layout for portfolio highlights.", detailsPage: "portfolio-details.html" },
+  { title: "Carousel Slide 12", category: "carousels", subCategory:"2",image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756758590/carousel_7_xpov6p.png", description: "Perfect for educational or tutorial posts.", detailsPage: "portfolio-details.html" },
+  { title: "Carousel Slide 13", category: "carousels", subCategory:"3",image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1767171726/WhatsApp_Image_2025-12-31_at_11.17.40_lavusg.jpg", description: "Perfect for educational or tutorial posts.", detailsPage: "portfolio-details.html" },
+  { title: "Carousel Slide 14", category: "carousels", subCategory:"3",image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1767171723/WhatsApp_Image_2025-12-31_at_11.17.40_1_hnqx9s.jpg", description: "Perfect for educational or tutorial posts.", detailsPage: "portfolio-details.html" },
+  { title: "Carousel Slide 15", category: "carousels", subCategory:"3",image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1767171722/WhatsApp_Image_2025-12-31_at_11.17.40_2_cg7zbz.jpg", description: "Perfect for educational or tutorial posts.", detailsPage: "portfolio-details.html" },
+  { title: "Carousel Slide 16", category: "carousels", subCategory:"3",image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1767171721/WhatsApp_Image_2025-12-31_at_11.17.40_3_nzqcto.jpg", description: "Perfect for educational or tutorial posts.", detailsPage: "portfolio-details.html" },
+  
+  
+  
   { title: "Logo Design 1", category: "logos", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756751041/logo_6_t25z2h.png", description: "Minimalist branding logo.", detailsPage: "portfolio-details.html" },
   { title: "Logo Design 2", category: "logos", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756751040/logo_4_lidkdx.png", description: "Modern logo with abstract elements.", detailsPage: "portfolio-details.html" },
   { title: "Logo Design 3", category: "logos", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756751040/logo_5_ghdomz.png", description: "Flat design logo for startups.", detailsPage: "portfolio-details.html" },
@@ -240,9 +236,24 @@
   { title: "Package Design 3", category: "package", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756758963/package_3_paytvi.png", description: "Creative label and branding package.", detailsPage: "portfolio-details.html" },
   { title: "Package Design 4", category: "package", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756758962/package_4_yv95sm.jpg", description: "Eco-friendly packaging concept.", detailsPage: "portfolio-details.html" },
   { title: "Package Design 5", category: "package", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756758964/package_5_gxariv.jpg", description: "Premium product box layout.", detailsPage: "portfolio-details.html" },
-  { title: "Pamplet Design 1", category: "pamplet", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756759139/pamplet_1_p4owgi.jpg", description: "Informative layout for product promotion.", detailsPage: "portfolio-details.html" },
-  { title: "Pamplet Design 2", category: "pamplet", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756759141/pamplet_2_xhfbg5.jpg", description: "Clean and minimal business pamplet.", detailsPage: "portfolio-details.html" },
-  { title: "Pamplet Design 3", category: "pamplet", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756759144/pamplet_3_s0m5zz.png", description: "Vibrant pamplet for marketing campaigns.", detailsPage: "portfolio-details.html" },
+  
+  { title: "Pamplet Design 1", category: "pamplet", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756759144/pamplet_3_s0m5zz.png", description: "Vibrant pamplet for marketing campaigns.", detailsPage: "portfolio-details.html" },
+  { title: "Pamplet Design 2", category: "pamplet", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1767169942/WhatsApp_Image_2025-12-31_at_11.04.19_m4gwv6.jpg", description: "Vibrant pamplet for marketing campaigns.", detailsPage: "portfolio-details.html" },
+  { title: "Pamplet Design 3", category: "pamplet", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1767169941/WhatsApp_Image_2025-12-31_at_11.05.17_pbdffc.jpg", description: "Vibrant pamplet for marketing campaigns.", detailsPage: "portfolio-details.html" },
+  { title: "Pamplet Design 4", category: "pamplet", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1767169941/WhatsApp_Image_2025-12-31_at_11.04.41_zfu5qz.jpg", description: "Vibrant pamplet for marketing campaigns.", detailsPage: "portfolio-details.html" },
+  { title: "Pamplet Design 5", category: "pamplet", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1767169941/WhatsApp_Image_2025-12-31_at_11.05.36_ey4clq.jpg", description: "Vibrant pamplet for marketing campaigns.", detailsPage: "portfolio-details.html" },
+  { title: "Pamplet Design 6", category: "pamplet", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1767169941/WhatsApp_Image_2025-12-31_at_11.23.02_1_eljyxk.jpg", description: "Vibrant pamplet for marketing campaigns.", detailsPage: "portfolio-details.html" },
+  { title: "Pamplet Design 7", category: "pamplet", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1767169940/WhatsApp_Image_2025-12-31_at_11.23.02_i9qlpa.jpg", description: "Vibrant pamplet for marketing campaigns.", detailsPage: "portfolio-details.html" },
+  
+  { title: "Brouchre Design 1", category: "brouchre", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1767170914/WhatsApp_Image_2025-12-31_at_11.23.33_ldz9nn.jpg", description: "Vibrant pamplet for marketing campaigns.", detailsPage: "portfolio-details.html" },
+  { title: "Brouchre Design 2", category: "brouchre", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1767170913/WhatsApp_Image_2025-12-31_at_11.23.33_1_sswnch.jpg", description: "Vibrant pamplet for marketing campaigns.", detailsPage: "portfolio-details.html" },
+  { title: "Brouchre Design 3", category: "brouchre", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1767170916/WhatsApp_Image_2025-12-31_at_11.23.33_2_uvzfzz.jpg", description: "Vibrant pamplet for marketing campaigns.", detailsPage: "portfolio-details.html" },
+  { title: "Brouchre Design 4", category: "brouchre", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1767170479/WhatsApp_Image_2025-12-31_at_10.40.07_pqrejx.jpg", description: "Vibrant pamplet for marketing campaigns.", detailsPage: "portfolio-details.html" },
+  
+  { title: "Brouchre Design 5", category: "brouchre", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1767170804/WhatsApp_Image_2025-12-31_at_11.15.48_1_vqcdtk.jpg", description: "Vibrant pamplet for marketing campaigns.", detailsPage: "portfolio-details.html" },
+  { title: "Brouchre Design 6", category: "brouchre", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1767170799/WhatsApp_Image_2025-12-31_at_11.15.48_ob9ufm.jpg", description: "Vibrant pamplet for marketing campaigns.", detailsPage: "portfolio-details.html" },
+ 
+  { title: "Pamplet Design 8", category: "pamplet", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1767169941/WhatsApp_Image_2025-12-31_at_11.21.37_jxhsfb.jpg", description: "Vibrant pamplet for marketing campaigns.", detailsPage: "portfolio-details.html" },
   { title: "Invitation Design 1", category: "invitation", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756759249/pamplet_4_ww383w.png", description: "Corporate-themed layout with icons.", detailsPage: "portfolio-details.html" },
   { title: "Invitation Design 2", category: "invitation", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756759251/pamplet_5_vx4us2.png", description: "Eye-catching real estate pamplet.", detailsPage: "portfolio-details.html" },
   { title: "Invitation Design 3", category: "invitation", image: "https://res.cloudinary.com/dojy6fceq/image/upload/v1756759254/pamplet_6_j0tklc.png", description: "Bold typography with elegant visuals.", detailsPage: "portfolio-details.html" },
@@ -264,29 +275,33 @@
   { title: "video 3", category: "videos", image: "https://res.cloudinary.com/dojy6fceq/video/upload/v1756765850/Spelling_mistakes_on_a_resume_can_have_detrimental_effects_on_your_job_prospects._It_is_important_to_acknowledge_the_negative_impact_they_can_have_and_take_necessary_steps_to_avoid_them.Firstly_spelling_mistakes_c_pr7bnm.mp4", description: "Video related social media content", detailsPage: "portfolio-details.html" },
   { title: "video 4", category: "videos", image: "https://res.cloudinary.com/dojy6fceq/video/upload/v1756765847/Y_Abhasa_1_nw4k6l.mp4", description: "Video related social media content", detailsPage: "portfolio-details.html" },
 ];
+ function renderPortfolio(category = '*', page = 1) {
+  if (page === 1) portfolioContainer.innerHTML = '';
 
+  let filteredData = category === '*' 
+    ? portfolioData 
+    : portfolioData.filter(item => item.category === category);
 
-portfolioData.forEach(item => {
-  const isLogo = item.category === 'logos';
-   const isVideo = item.category === 'videos';
-  const styles = [
-    isLogo ? 'background-color: #04273d' : '',
-  ].filter(Boolean).join('; ');
+  const startIndex = (page - 1) * itemsPerPage;
+  const endIndex = startIndex + itemsPerPage;
+  const paginatedData = filteredData.slice(startIndex, endIndex);
 
-   // Choose element type: <img> for images, <video> for videos
-    let mediaElement = '';
-    if (isVideo) {
-      mediaElement = `
-        <video class="img-fluid" style="${styles}" controls muted>
+  paginatedData.forEach(item => {
+    // Skip items with category 'carousels'
+    if (item.category === 'carousels') return;
+
+    const isLogo = item.category === 'logos';
+    const isVideo = item.category === 'videos';
+    const styles = isLogo ? 'background-color: #04273d;' : '';
+
+    let mediaElement = isVideo
+      ? `<video class="img-fluid" style="${styles}" controls muted>
           <source src="${item.image}" type="video/mp4">
           Your browser does not support the video tag.
-        </video>
-      `;
-    } else {
-      mediaElement = `<img src="${item.image}" class="img-fluid" alt="${item.title}" style="${styles}">`;
-    }
+        </video>`
+      : `<img loading="lazy" src="${item.image}" class="img-fluid" alt="${item.title}" style="${styles}">`;
 
- const html = `
+    const html = `
       <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-${item.category}">
         ${mediaElement}
         <div class="portfolio-info">
@@ -297,35 +312,155 @@ portfolioData.forEach(item => {
           </a>
         </div>
       </div>`;
-      
+
     portfolioContainer.insertAdjacentHTML('beforeend', html);
   });
 
+  // Re-init Isotope & GLightbox
+  imagesLoaded(portfolioContainer, function () {
+    const iso = new Isotope(portfolioContainer, {
+      itemSelector: '.portfolio-item',
+      layoutMode: 'masonry'
+    });
+    GLightbox({ selector: '.glightbox', touchNavigation: true, loop: true, autoplayVideos: true });
+  });
+}
 
 
-    // Init Isotope after images load
-    imagesLoaded(portfolioContainer, function () {
-      const iso = new Isotope(portfolioContainer, {
-        itemSelector: '.portfolio-item',
-        layoutMode: 'masonry'
-      });
+  // Initial load
+  renderPortfolio(currentCategory, currentPage);
 
-      document.querySelectorAll('.portfolio-filters li').forEach(btn => {
-      btn.addEventListener('click', function () {
-        document.querySelector('.portfolio-filters .filter-active')?.classList.remove('filter-active');
-        this.classList.add('filter-active');
-        iso.arrange({ filter: this.getAttribute('data-filter') });
-        aosInit();
-      });
+  // Category filter click
+  document.querySelectorAll('.portfolio-filters li').forEach(btn => {
+    btn.addEventListener('click', function () {
+      document.querySelector('.portfolio-filters .filter-active')?.classList.remove('filter-active');
+      this.classList.add('filter-active');
+      currentCategory = this.getAttribute('data-filter') === '*' ? '*' : this.getAttribute('data-filter').replace('.filter-', '');
+      currentPage = 1;
+      renderPortfolio(currentCategory, currentPage);
+      renderCarouselItems(currentCategory);
     });
   });
 
-     GLightbox({ 
-    selector: '.glightbox',
-    touchNavigation: true,
-    loop: true,
-    autoplayVideos: true 
+  // Infinite scroll: load next set automatically
+  window.addEventListener('scroll', () => {
+    const scrollPosition = window.scrollY + window.innerHeight;
+    const pageHeight = document.documentElement.scrollHeight;
+
+    if (scrollPosition + 100 >= pageHeight) {
+      const filteredData = currentCategory === '*' ? portfolioData : portfolioData.filter(item => item.category === currentCategory);
+      const totalPages = Math.ceil(filteredData.length / itemsPerPage);
+
+      if (currentPage < totalPages) {
+        currentPage++;
+        renderPortfolio(currentCategory, currentPage);
+      }
+    }
   });
+
+  /**
+   * Render carousel items grouped by subCategory
+   */
+/**
+ * Render carousel items grouped by subCategory
+ */
+function renderCarouselItems(currentCategory) {
+  // Only render if the active category is 'carousels'
+  console.log("Current Category",currentCategory)
+  if (currentCategory !== 'carousels') {
+    const existingSection = document.querySelector('.carousel-section');
+    if (existingSection) {
+      existingSection.style.display = 'none'; // hide if exists
+    }
+    return;
   }
+
+  // Filter carousel items
+  const carouselData = portfolioData.filter(item => item.category === 'carousels');
+
+  // Find or create the carousel section
+  let carouselSection = document.querySelector('.carousel-section');
+  if (!carouselSection) {
+    carouselSection = document.createElement('section');
+    carouselSection.classList.add('carousel-section', 'my-5');
+    document.body.appendChild(carouselSection);
+  }
+
+  if (carouselData.length === 0) {
+    carouselSection.style.display = 'none';
+    carouselSection.innerHTML = '';
+    return;
+  }
+
+  // Show section if there are carousel items
+  carouselSection.style.display = '';
+  carouselSection.innerHTML = ''; // Clear previous content
+
+  // Group items by subCategory
+  const grouped = {};
+  carouselData.forEach(item => {
+    if (!grouped[item.subCategory]) grouped[item.subCategory] = [];
+    grouped[item.subCategory].push(item);
+  });
+
+  // Render each subCategory as a separate carousel
+  Object.keys(grouped).forEach(subCat => {
+   const slides = grouped[subCat].map(item => `
+  <div class="swiper-slide">
+    <a 
+      href="${item.image}" 
+      class="glightbox preview-link" 
+      data-gallery="carousel-gallery-${subCat}"
+      title="${item.title}"
+    >
+      <img 
+        loading="lazy" 
+        src="${item.image}" 
+        class="img-fluid" 
+        alt="${item.title}"
+      >
+    </a>
+  </div>
+`).join('');
+
+
+    const carouselHTML = `
+      <div class="swiper init-swiper-carousel-${subCat}">
+        <div class="swiper-wrapper">
+          ${slides}
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+      </div>
+    `;
+
+    carouselSection.insertAdjacentHTML('beforeend', carouselHTML);
+
+    // Initialize Swiper
+    new Swiper(`.init-swiper-carousel-${subCat}`, {
+      slidesPerView: 1,
+      spaceBetween: 20,
+      loop: true,
+      navigation: {
+        nextEl: `.init-swiper-carousel-${subCat} .swiper-button-next`,
+        prevEl: `.init-swiper-carousel-${subCat} .swiper-button-prev`,
+      },
+      pagination: {
+        el: `.init-swiper-carousel-${subCat} .swiper-pagination`,
+        clickable: true,
+      },
+      breakpoints: {
+        768: { slidesPerView: 2 },
+        1024: { slidesPerView: 3 },
+      },
+    });
+  });
+}
+
+
+// Call the function after portfolioData is loaded
+renderCarouselItems(currentCategory);
+
 
 })();
